@@ -3,6 +3,10 @@
 
 # 🌐 `frontend/README.md`
 ```markdown
+## 🌍 Live Frontend URL
+Deployed on Render:  
+➡️ https://virtualassistantfrontend-zy6a.onrender.com
+
 # 🌐 Virtual Assistant Frontend
 
 React frontend for the **Virtual Assistant App**.  
