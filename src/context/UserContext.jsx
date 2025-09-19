@@ -8,7 +8,7 @@ function UserContext({ children }) {
         const [frontendImage, setFrontEndImage] = React.useState(null);
         const [backendImage, setBackEndImage] = React.useState(null);
         const [selectedImage,setSelectedImage] =React.useState(null)
-    const serverUrl = "http://localhost:8080";
+    const serverUrl = "https://virtualassistantbackend-oefv.onrender.com";
     const handleCurrentUser = async () =>{
       try {
         const response = await axios.get(`${serverUrl}/api/users/current`,{withCredentials: true});
