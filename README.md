@@ -5,6 +5,9 @@
 ## 🌍 Live Frontend URL
 Deployed on Render:  
 ➡️ https://virtualassistantfrontend-zy6a.onrender.com
+
+🔗 Backend Repo: [virtual-assistant-backend](https://github.com/Dipeshsharma2005/VirtualAssistantBackend)  
+
 ```markdown
 
 
