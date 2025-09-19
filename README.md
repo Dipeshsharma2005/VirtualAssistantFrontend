@@ -62,11 +62,11 @@ Frontend runs at:
 
 / → Chat with AI assistant
 
-<img width="1919" height="965" alt="Screenshot 2025-09-19 172515" src="https://github.com/user-attachments/assets/e009e95f-db4b-4252-b9e1-a8b39cc6578d" />
-<img width="1920" height="1080" alt="Screenshot (100)" src="https://github.com/user-attachments/assets/8e7a9d5d-b668-470a-9874-64ad73bf8b29" />
-<img width="1919" height="969" alt="Screenshot 2025-09-19 172411" src="https://github.com/user-attachments/assets/4d0102cd-ec2f-4be0-a6f1-a5100adbd299" />
-<img width="1917" height="969" alt="Screenshot 2025-09-19 172345" src="https://github.com/user-attachments/assets/cd89f672-c2ec-46aa-9cf0-e0d0ad769168" />
-<img width="1917" height="963" alt="Screenshot 2025-09-19 172256" src="https://github.com/user-attachments/assets/823aed69-9f46-4386-9632-7cd6f3bde629" />
-<img width="1920" height="1080" alt="Screenshot (98)" src="https://github.com/user-attachments/assets/60995172-ab08-4f94-841d-e90d78667396" />
+<img width="1919" height="965" alt="Login" src="https://github.com/user-attachments/assets/e009e95f-db4b-4252-b9e1-a8b39cc6578d" />
+<img width="1920" height="1080" alt="Customize" src="https://github.com/user-attachments/assets/8e7a9d5d-b668-470a-9874-64ad73bf8b29" />
+<img width="1919" height="969" alt="Customize2" src="https://github.com/user-attachments/assets/4d0102cd-ec2f-4be0-a6f1-a5100adbd299" />
+<img width="1917" height="969" alt="Home" src="https://github.com/user-attachments/assets/cd89f672-c2ec-46aa-9cf0-e0d0ad769168" />
+<img width="1917" height="963" alt="History" src="https://github.com/user-attachments/assets/823aed69-9f46-4386-9632-7cd6f3bde629" />
+<img width="1920" height="1080" alt="Home" src="https://github.com/user-attachments/assets/60995172-ab08-4f94-841d-e90d78667396" />
 
 
