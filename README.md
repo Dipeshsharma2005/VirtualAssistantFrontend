@@ -1,12 +1,72 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+---
 
-Currently, two official plugins are available:
+# 🌐 `frontend/README.md`
+```markdown
+# 🌐 Virtual Assistant Frontend
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+React frontend for the **Virtual Assistant App**.  
+Allows users to sign up, log in, customize their AI assistant, and chat in real-time.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🚀 Features
+- React + Vite + TailwindCSS
+- JWT-based authentication with backend
+- Assistant customization (name + avatar)
+- Chat interface with AI assistant
+- Axios for API requests
+- Responsive UI
+
+---
+
+## ⚙️ Tech Stack
+- React 18
+- Vite
+- TailwindCSS
+- Axios
+- React Router DOM
+
+---
+
+## ⚡ Setup Instructions
+
+### 1️⃣ Clone & Navigate
+```bash
+git clone https://github.com/yourusername/virtual-assistant.git
+cd frontend
+
+2️⃣ Install Dependencies
+npm install
+
+3️⃣ Configure API URL
+In src/context/UserContext.jsx set your backend URL:
+const serverUrl = import.meta.env.VITE_SERVER_URL || "http://localhost:8080";
+
+
+4️⃣ Run Frontend
+npm run dev
+
+Frontend runs at:
+➡️ http://localhost:5173
+
+🔑 Pages
+
+/signup → Register user
+
+/login → Login
+
+/customize → Choose assistant image
+
+/customize2 → Enter assistant name
+
+/ → Chat with AI assistant
+
+<img width="1919" height="965" alt="Screenshot 2025-09-19 172515" src="https://github.com/user-attachments/assets/e009e95f-db4b-4252-b9e1-a8b39cc6578d" />
+<img width="1920" height="1080" alt="Screenshot (100)" src="https://github.com/user-attachments/assets/8e7a9d5d-b668-470a-9874-64ad73bf8b29" />
+<img width="1919" height="969" alt="Screenshot 2025-09-19 172411" src="https://github.com/user-attachments/assets/4d0102cd-ec2f-4be0-a6f1-a5100adbd299" />
+<img width="1917" height="969" alt="Screenshot 2025-09-19 172345" src="https://github.com/user-attachments/assets/cd89f672-c2ec-46aa-9cf0-e0d0ad769168" />
+<img width="1917" height="963" alt="Screenshot 2025-09-19 172256" src="https://github.com/user-attachments/assets/823aed69-9f46-4386-9632-7cd6f3bde629" />
+<img width="1920" height="1080" alt="Screenshot (98)" src="https://github.com/user-attachments/assets/60995172-ab08-4f94-841d-e90d78667396" />
+
+
