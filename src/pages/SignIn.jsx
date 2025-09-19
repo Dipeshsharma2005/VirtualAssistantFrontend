@@ -1,0 +1,138 @@
+import React, { useContext, useState } from "react";
+import bg from "../assets/authBg.png";
+import { IoEye, IoEyeOff } from "react-icons/io5";
+import { useNavigate } from "react-router-dom";
+import { userDataContext } from "../context/UserContext";
+import axios from "axios";
+
+const SignIn = () => {
+  const [showPassword, setShowPassword] = useState(false);
+  const navigate = useNavigate();
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [errors, setErrors] = useState({});
+  const [loading, setLoading] = useState(false);
+
+  const { serverUrl, setUserData } = useContext(userDataContext);
+
+  const handleSignIn = async (e) => {
+    e.preventDefault();
+    setErrors({});
+    setLoading(true);
+
+    try {
+      const response = await axios.post(
+        `${serverUrl}/api/auth/signin`,
+        { email, password },
+        { withCredentials: true }
+      );
+
+      setUserData(response.data);
+      console.log(response.data)
+      setLoading(false);
+
+      // Redirect after login
+      navigate("/");
+    } catch (error) {
+      setLoading(false);
+      setUserData(null);
+
+      if (error.response && error.response.data) {
+        setErrors(error.response.data); // backend sends { field: message }
+      } else {
+        setErrors({ general: "Something went wrong. Please try again." });
+      }
+    }
+  };
+
+  return (
+    <div
+      className="w-full h-[100vh] bg-cover flex justify-center items-center"
+      style={{ backgroundImage: `url(${bg})` }}
+    >
+      <form
+        onSubmit={handleSignIn}
+        className="w-[90%] h-[600px] px-[20px] max-w-[500px] bg-[#00000062] backdrop-blur shadow-lg shadow-black flex flex-col items-center justify-center gap-[20px]"
+      >
+        <h1 className="text-white text-[30px] font-semibold mb-[30px]">
+          Login to <span className="text-blue-400">Virtual Assistant</span>
+        </h1>
+
+        {/* Email input */}
+        <input
+          required
+          id="email"
+          name="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          type="email"
+          placeholder="Enter your Email"
+          className={`w-full h-[60px] outline-none border-2 ${
+            errors.email ? "border-red-500" : "border-white"
+          } bg-transparent text-white placeholder-gray-300 px-[20px] py-[10px] rounded-full text-[18px]`}
+        />
+        {errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
+
+        {/* Password input */}
+        <div
+          className={`w-full h-[60px] relative border-2 ${
+            errors.password ? "border-red-500" : "border-white"
+          } bg-transparent text-white rounded-full text-[18px]`}
+        >
+          <input
+            required
+            id="password"
+            name="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            type={showPassword ? "text" : "password"}
+            placeholder="Password"
+            className="w-full h-full outline-none rounded-full bg-transparent placeholder-gray-300 px-[20px] py-[10px]"
+          />
+          {!showPassword ? (
+            <IoEye
+              onClick={() => setShowPassword(true)}
+              className="absolute top-[18px] cursor-pointer right-[20px] text-white w-[25px] h-[25px]"
+            />
+          ) : (
+            <IoEyeOff
+              onClick={() => setShowPassword(false)}
+              className="absolute top-[18px] right-[20px] cursor-pointer text-white w-[25px] h-[25px]"
+            />
+          )}
+        </div>
+        {errors.password && (
+          <p className="text-red-500 text-sm">{errors.password}</p>
+        )}
+
+        {/* General error */}
+        {errors.general && (
+          <p className="text-red-500 text-sm">{errors.general}</p>
+        )}
+
+        {/* Submit */}
+        <button
+          disabled={loading}
+          className={`min-w-[150px] h-[60px] mt-[30px] cursor-pointer font-semibold rounded-full text-[19px] ${
+            loading
+              ? "bg-gray-400 text-white cursor-not-allowed"
+              : "bg-white text-black"
+          }`}
+        >
+          {loading ? "Signing In..." : "Sign In"}
+        </button>
+
+        <p
+          className="text-white cursor-pointer text-[18px]"
+          onClick={() => navigate("/signup")}
+        >
+          Want to create an account?{" "}
+          <span className="text-blue-400">Sign Up</span>
+        </p>
+      </form>
+    </div>
+  );
+};
+
+export default SignIn;
