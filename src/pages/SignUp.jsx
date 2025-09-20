@@ -37,7 +37,6 @@ const SignUp = () => {
       );
 
       setUserData(response.data);
-      console.log(response.data)
       setLoading(false);
 
       // Redirect to homepage/dashboard after signup
