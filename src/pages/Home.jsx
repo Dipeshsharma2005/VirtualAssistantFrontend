@@ -57,7 +57,6 @@ const Home = () => {
       try {
         recognition.start();
         isRecognizingRef.current = true;
-        console.log("Recognition started (manual start)");
       } catch (error) {
         if (!error.message.includes("start")) console.log(error);
       }
@@ -76,7 +75,6 @@ const Home = () => {
       recognitionRef.current.stop();
       isRecognizingRef.current = false;
       setListening(false);
-      console.log("Recognition paused during speech");
     }
 
     isSpeakingRef.current = true;
@@ -88,7 +86,6 @@ const Home = () => {
       setAiText("");
       isSpeakingRef.current = false;
       setIsSpeaking(false); // ✅ reset when finished
-      console.log("Speech ended");
       setTimeout(() => startRecognition(), 400);
     };
   };
@@ -140,7 +137,6 @@ const Home = () => {
       if (isMounted && !isSpeakingRef.current && !isRecognizingRef.current) {
         try {
           recognition.start();
-          console.log("rec started");
         } catch (error) {
           if (error.name !== "InvalidStateError") {
             console.log(error);
@@ -154,7 +150,6 @@ const Home = () => {
         try {
           recognition.start();
           isRecognizingRef.current = true;
-          console.log("Recognition started (safeRecognition)");
         } catch (error) {
           if (!error.message.includes("start")) {
             console.log("Recognition error:", error);
@@ -166,13 +161,11 @@ const Home = () => {
     recognition.onstart = () => {
       isRecognizingRef.current = true;
       setListening(true);
-      console.log("Recognition onstart");
     };
 
     recognition.onend = () => {
       isRecognizingRef.current = false;
       setListening(false);
-      console.log("Recognition onend");
       if (isMounted && !isSpeakingRef.current) {
         setTimeout(
           () =>
@@ -219,7 +212,6 @@ const Home = () => {
       const transcript = e.results[e.results.length - 1][0].transcript.trim();
       if (!transcript) return;
 
-      console.log("Transcript:", transcript);
 
       if (
         transcript.toLowerCase().includes(userData.assistantName.toLowerCase())
