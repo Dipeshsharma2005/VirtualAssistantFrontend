@@ -31,7 +31,6 @@ function Customize2() {
         formData,
         { withCredentials: true }
       );
-      console.log(result.data);
       setUserData(result.data);
       setLoading(false)
       navigate("/")
