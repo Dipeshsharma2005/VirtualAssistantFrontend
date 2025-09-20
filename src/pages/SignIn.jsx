@@ -29,7 +29,6 @@ const SignIn = () => {
       );
 
       setUserData(response.data);
-      console.log(response.data)
       setLoading(false);
 
       // Redirect after login
